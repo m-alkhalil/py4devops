@@ -1,13 +1,16 @@
 import requests
+from configparser import ConfigParser
+#import configparser
 import json
 
+#use html paser for html pages
+parser = ConfigParser()
+parser.read("config.ini")
 
-# weather_url = ""
-url = "https://xkcd.com/353/"
+api_key = parser.get("WEATHER_API_DATA","api-key")
 
-req = requests.get(url)
+#weather_url = f"https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid={api_key}"
+url = http://api.openweathermap.org/geo/1.0/direct?q=London&limit=5&appid={api_key}
+req = requests.get(weather_url)
 
-#print(dir(req))
-#print(help(req))
-#print(req.status_code)
-#print(req.content)
+#print(api_key)
