@@ -8,7 +8,7 @@ import logging
 
 #use html paser for html pages
 parser = ConfigParser()
-parser.read("config.ini")
+parser.read("../config/config.ini")
 
 api_key = parser.get("WEATHER_API_DATA","api-key")
 # Don't add paramerers to the url directly, instead creare a dict and let requests lib generate the appropreate url for us 
