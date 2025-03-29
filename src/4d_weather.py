@@ -18,11 +18,10 @@ data2 = {
     'units': 'imperial',
     'appid': api_key 
 }
-url2 = "pi.openweathermap.org/data/2.5/forecast"
 
-h_data = requests.get(url, data2)#(url,payload)
+h_data = requests.get(url, data2)
 dt_data = h_data.json()
-# print(dt_data)
+
 lst = dt_data['list']
 ite = None
 for item in lst:

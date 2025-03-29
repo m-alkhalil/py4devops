@@ -1,14 +1,18 @@
+'''
+    this is logging module
+'''
 import logging
 from logging.config import dictConfig
-# when the default logger isn't configure, it will only show 3 critical, error and warning, so we need to change
-# the basic config. cn write to a generic file too. w: write, a: append , %(name): 
+# when the default logger isn't configure, it will only show 3 critical,
+# error and warning, so we need to change
+# the basic config. cn write to a generic file too. w: write, a: append , %(name):
 #logging.basicConfig(level=logging.DEBUG, format='%(levelname)-10s: %(name)-s :  %(message)s')
-# (
-#     level=logging.DEBUG, 
-#     filename="logs/app_log.log", 
-#     filemode="a", 
-#     encoding="utf-8"
-#     )
+#(
+#level=logging.DEBUG,
+#filename="logs/app_log.log",
+#filemode="a",
+#encoding="utf-8"
+#)
 
 # dict config, define a dictionary with the needed configuration then pass it to dictConfig()
 config = {

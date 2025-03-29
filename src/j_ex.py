@@ -20,7 +20,7 @@ for item in lst:
 # for key in final:
 #     print(key, ": ",final[key])#f" Date and Time: {item['dt_txt']}, Temp: {item['main']['temp']}, weather status: {item['weather'][0]['main']}")
 
-def drow(frm) -> None:
+def draw_temp_plot(frm) -> None:
     """ This function plot data 
     frm: data frame object
     """
@@ -40,10 +40,9 @@ def drow(frm) -> None:
     plt.xticks(rotation=45) # Rotate the x-axis labels for better readability
    # plt.tight_layout() # Adjust the layout to avoid overlap
     plt.show()
-    ...
 
 df = pd.DataFrame.from_dict(final ,orient='index')
 df.index = pd.to_datetime(df.index)
 print(df)
-drow(df)
+draw_temp_plot(df)
 
