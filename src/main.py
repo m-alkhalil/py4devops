@@ -1,5 +1,5 @@
 import pandas as pd
-import matplotlib as plt
+import matplotlib.pyplot as plt
 from logConfigure import configure_logger
 import os
 from dotenv import load_dotenv
@@ -95,11 +95,27 @@ def plot_save_dataf(weather_data_df: pd.DataFrame) -> None:
     Return: None.
 
     '''
-    ...
+    try:
+        # Plot the temperature over time 
+        # (use the index as the x-axis)
+        plt.figure(figsize=(10,6))
+        plt.plot(weather_data_df.index, weather_data_df['TEMP'],marker='o', color='g', label='Temp (F)')
 
-def record_data(weather_data)-> None:
-    
-    pass
+        plt.title('Tempreture in 5 days')
+        plt.xlabel('Date')
+        plt.ylabel('Temp (F) ')
+        
+        # Display grid and legend
+        plt.grid(True)
+        plt.legend()
+
+        plt.xticks(rotation=45) # Rotate the x-axis labels for better readability
+        plt.tight_layout() # Adjust the layout to avoid overlap
+        plt.savefig("Forcast_plot_figure.png")
+        plt.show()
+    except Exception as exp:
+        app_logger.error(f"Plotting Error occured: {exp}")
+
 
 def main():
 
